@@ -107,6 +107,9 @@
     const noBtn = document.getElementById('noBtn');
     const yesBtn = document.getElementById('yesBtn');
 
+    // Get repository base path dynamically
+    const basePath = location.pathname.replace(/\/[^\/]*$/, '/');
+
     function placeNoNextToYes() {
       const yesRect = yesBtn.getBoundingClientRect();
       noBtn.style.left = yesRect.right + 20 + 'px';
@@ -135,7 +138,7 @@
     yesBtn.addEventListener('click', () => {
       document.body.innerHTML = `
         <div class="second-page">
-          <img src="3rd.jpg" alt="Our Photo" />
+          <img src="${basePath}3rd.jpg" alt="Our Photo" />
           <div class="message">
             Love you from all 4 chambers of my heart and more ❤️
           </div>
